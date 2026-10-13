@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>لوحة تحكم الموقع — AYOUB Climatisation</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+:root{--navy:#06263b;--cyan:#00b4d8;--cyan2:#48cae4;--bg:#eef6fa;--ink:#12303f;--muted:#5b7a89}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);padding:20px}
+.wrap{max-width:820px;margin:0 auto}
+header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+header img{height:48px}
+h1{font-size:1.3rem;color:var(--navy)}
+.card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 8px 30px rgba(6,38,59,.08);margin-bottom:18px}
+label{display:block;font-weight:700;font-size:.92rem;margin:14px 0 6px;color:var(--navy)}
+input,textarea,select{width:100%;padding:12px;border:1.5px solid #cfe3ec;border-radius:10px;font-size:1rem;font-family:inherit;background:#fbfdfe}
+textarea{rows:3}
+.btn{display:inline-block;background:var(--cyan);color:#fff;font-weight:700;padding:12px 22px;border-radius:999px;border:none;cursor:pointer;font-size:1rem;margin-top:14px}
+.btn:hover{background:#0096c7}
+.btn.sec{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+.btn.danger{background:#e63946}
+.msg{margin-top:12px;font-size:.95rem}
+.ok{color:#1a936f}.err{color:#e63946}
+.hidden{display:none}
+.grid{display:grid;gap:0 16px;grid-template-columns:1fr}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
+small{color:var(--muted)}
+.topbar{display:flex;justify-content:space-between;align-items:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="logo-icon.svg" alt="AYOUB"><div><h1>لوحة تحكم الموقع</h1><small>AYOUB Climatisation — Tanger</small></div></header>
+
+  <div class="card" id="loginCard">
+    <h2 style="color:var(--navy);font-size:1.1rem">تسجيل الدخول</h2>
+    <label>البريد الإلكتروني</label>
+    <input id="email" type="email" autocomplete="username" placeholder="eljartiayoub8@gmail.com">
+    <label>كلمة المرور</label>
+    <input id="password" type="password" autocomplete="current-password" placeholder="••••••••">
+    <button class="btn" id="loginBtn">دخول</button>
+    <p class="msg" id="loginMsg"></p>
+    <p><small>أول دخول قد يأخذ حتى دقيقة (السيرفر يستيقظ). كلمة المرور محفوظة في سيرفر Render ولا تظهر في أي ملف من ملفات الموقع.</small></p>
+  </div>
+
+  <div class="card hidden" id="editorCard">
+    <div class="topbar"><h2 style="color:var(--navy);font-size:1.1rem">تعديل محتوى الموقع</h2><button class="btn danger" id="logoutBtn" style="margin:0;padding:8px 16px">خروج</button></div>
+    <div class="grid">
+      <div><label>عنوان الواجهة (فرنسي)</label><textarea id="f_heroTitleFR" rows="3"></textarea></div>
+      <div><label>النص تحت العنوان (فرنسي)</label><textarea id="f_heroSubFR" rows="3"></textarea></div>
+      <div><label>رقم الهاتف (للعرض)</label><input id="f_phoneDisplay"></div>
+      <div><label>الرقم الدولي لروابط واتساب (بدون +)</label><input id="f_phoneIntl"></div>
+      <div><label>البريد الإلكتروني</label><input id="f_email"></div>
+      <div><label>سنوات الخبرة</label><input id="f_yearsExperience" type="number" min="0" max="60"></div>
+    </div>
+    <label>إعلان أعلى الموقع (اختياري — اتركه فارغاً لإخفائه)</label>
+    <input id="f_announcement" placeholder="مثال: عرض الصيف — زيارة تقنية مجانية هذا الأسبوع">
+    <h3 style="color:var(--navy);margin-top:22px;font-size:1rem">آراء الزبناء (تظهر في قسم الآراء)</h3>
+    <div id="testimonials"></div>
+    <button class="btn" id="saveBtn">💾 حفظ ونشر التعديلات</button>
+    <button class="btn sec" id="exportBtn">تصدير نسخة احتياطية</button>
+    <label class="btn sec" style="cursor:pointer">استيراد نسخة<input id="importFile" type="file" accept=".json" style="display:none"></label>
+    <p class="msg" id="saveMsg"></p>
+    <p><small>التعديلات تظهر في الموقع مباشرة بعد الحفظ (قد تحتاج تحديث الصفحة). النسخة الاحتياطية تحميك إذا ضاع أي تعديل.</small></p>
+  </div>
+</div>
+<script>
+var API='https://ayoub-clima-admin.onrender.com';
+var token=sessionStorage.getItem('ayoub_token')||'';
+function $(id){return document.getElementById(id)}
+function showEditor(){$('loginCard').classList.add('hidden');$('editorCard').classList.remove('hidden');loadContent();}
+$('loginBtn').onclick=function(){
+  $('loginMsg').textContent='جارٍ الاتصال بالسيرفر… (قد يأخذ حتى دقيقة أول مرة)';$('loginMsg').className='msg';
+  fetch(API+'/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:$('email').value.trim(),password:$('password').value})})
+  .then(function(r){return r.json().then(function(d){if(!r.ok)throw new Error(d.error||'خطأ');return d;});})
+  .then(function(d){token=d.token;sessionStorage.setItem('ayoub_token',token);showEditor();})
+  .catch(function(e){$('loginMsg').textContent='❌ '+e.message;$('loginMsg').className='msg err';});
+};
+$('logoutBtn').onclick=function(){sessionStorage.removeItem('ayoub_token');location.reload();};
+function field(id,v){var el=$(id);if(el)el.value=(v==null?'':v);}
+function loadContent(){
+  fetch(API+'/api/content').then(function(r){return r.json();}).then(function(c){
+    field('f_heroTitleFR',c.heroTitleFR);field('f_heroSubFR',c.heroSubFR);
+    field('f_phoneDisplay',c.phoneDisplay);field('f_phoneIntl',c.phoneIntl);
+    field('f_email',c.email);field('f_yearsExperience',c.yearsExperience);
+    field('f_announcement',c.announcement);
+    var box=$('testimonials');box.innerHTML='';
+    (c.testimonials||[]).forEach(function(t,i){
+      var d=document.createElement('div');d.className='grid';
+      d.innerHTML='<div><label>الاسم '+(i+1)+'</label><input data-t="name" data-i="'+i+'" value="'+String(t.name||'').replace(/"/g,'&quot;')+'"></div>'
+      +'<div><label>النص '+(i+1)+'</label><input data-t="text" data-i="'+i+'" value="'+String(t.text||'').replace(/"/g,'&quot;')+'"></div>';
+      box.appendChild(d);
+    });
+    window._testiCount=(c.testimonials||[]).length;
+  }).catch(function(){$('saveMsg').textContent='تعذر تحميل المحتوى — حدّث الصفحة.';$('saveMsg').className='msg err';});
+}
+function collect(){
+  var t=[];for(var i=0;i<(window._testiCount||0);i++){
+    var n=document.querySelector('input[data-t="name"][data-i="'+i+'"]'),x=document.querySelector('input[data-t="text"][data-i="'+i+'"]');
+    t.push({name:n?n.value:'',text:x?x.value:'',stars:5});
+  }
+  return {heroTitleFR:$('f_heroTitleFR').value,heroSubFR:$('f_heroSubFR').value,phoneDisplay:$('f_phoneDisplay').value,
+    phoneIntl:$('f_phoneIntl').value.replace(/[^0-9]/g,''),email:$('f_email').value,yearsExperience:parseInt($('f_yearsExperience').value||'0',10),
+    announcement:$('f_announcement').value,testimonials:t};
+}
+$('saveBtn').onclick=function(){
+  $('saveMsg').textContent='جارٍ الحفظ…';$('saveMsg').className='msg';
+  fetch(API+'/api/content',{method:'PUT',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify(collect())})
+  .then(function(r){return r.json().then(function(d){if(!r.ok)throw new Error(d.error||'خطأ');return d;});})
+  .then(function(){$('saveMsg').textContent='✅ تم الحفظ والنشر — التعديلات ظاهرة في الموقع الآن.';$('saveMsg').className='msg ok';})
+  .catch(function(e){$('saveMsg').textContent='❌ '+e.message+' — أعد تسجيل الدخول إذا انتهت الجلسة.';$('saveMsg').className='msg err';});
+};
+$('exportBtn').onclick=function(){
+  var blob=new Blob([JSON.stringify(collect(),null,2)],{type:'application/json'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='ayoub-site-backup.json';a.click();
+};
+$('importFile').onchange=function(){
+  var f=this.files[0];if(!f)return;var rd=new FileReader();
+  rd.onload=function(){try{var c=JSON.parse(rd.result);
+    field('f_heroTitleFR',c.heroTitleFR);field('f_heroSubFR',c.heroSubFR);field('f_phoneDisplay',c.phoneDisplay);
+    field('f_phoneIntl',c.phoneIntl);field('f_email',c.email);field('f_yearsExperience',c.yearsExperience);field('f_announcement',c.announcement);
+    $('saveMsg').textContent='تمت الاستعادة في النموذج — اضغط «حفظ ونشر» للتأكيد.';$('saveMsg').className='msg ok';
+  }catch(e){$('saveMsg').textContent='❌ ملف غير صالح';$('saveMsg').className='msg err';}};
+  rd.readAsText(f);
+};
+if(token)showEditor();
+</script>
+</body>
+</html>
