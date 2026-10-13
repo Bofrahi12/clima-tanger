@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
 <title>AWAB CLIM — شركة تكييف وتبريد في طنجة | تركيب وصيانة التكييف المركزي و VRV و Gainable</title>
 <meta name="description" content="AWAB CLIM — شركة تكييف وتبريد في طنجة بخبرة 12 سنة: تركيب التكييف سبليت والمخفي (gainable) وأنظمة VRV/VRF والمركزي، التهوية، غرف التبريد، وعقود صيانة سنوية للفنادق والعيادات والمصانع والفيلات. زيارة تقنية مجانية وعرض سعر خلال 48 ساعة.">
 <meta property="og:title" content="AWAB CLIM — شركة تكييف وتبريد في طنجة">
@@ -14,63 +18,154 @@
 {"@context":"https://schema.org","@type":"HVACBusiness","name":"AWAB CLIM","description":"شركة تكييف وتبريد في طنجة: تركيب وصيانة التكييف السبليت والمخفي و VRV/VRF والمركزي والتهوية وغرف التبريد، وعقود صيانة سنوية للفنادق والعيادات والمصانع.","address":{"@type":"PostalAddress","addressLocality":"Tanger","addressCountry":"MA"},"telephone":"+212699963530","email":"awabclimatisation@gmail.com","areaServed":"Tanger-Tétouan-Al Hoceima","openingHours":"Mo-Sa 08:30-19:00","priceRange":"Sur devis"}
 </script>
 <style>
-:root{--navy:#06263b;--navy2:#0a3a57;--cyan:#00b4d8;--cyan2:#48cae4;--light:#f2f8fb;--ink:#12303f;--muted:#5b7a89;--white:#fff;--radius:16px}
+:root{--navy:#06263b;--navy2:#0a3a57;--cyan:#00b4d8;--cyan2:#48cae4;--light:#f2f8fb;--alt:#f4f9fc;--ink:#12303f;--muted:#5b7a89;--white:#fff;--radius:16px;--sh:0 10px 30px rgba(6,38,59,.08);--sh-lg:0 18px 44px rgba(6,38,59,.13)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Segoe UI',Tahoma,system-ui,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.7}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Tahoma,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.7}
+h1,h2,h3,h4,.logo,.btn,.flogo,.fcol h4{font-family:'Manrope','Inter',system-ui,'Segoe UI',Tahoma,Arial,sans-serif}
 a{text-decoration:none;color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:50;background:rgba(6,38,59,.96)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;color:#fff}
-.logo{font-weight:800;font-size:1.25rem}
-.logo span{color:var(--cyan2)}
-.nav nav{display:none;gap:26px;font-size:.95rem}
-.nav nav a{opacity:.9}.nav nav a:hover{opacity:1;color:var(--cyan2)}
-@media(min-width:820px){.nav nav{display:flex}}
-.btn{display:inline-block;background:var(--cyan);color:#fff;font-weight:700;padding:12px 24px;border-radius:999px;transition:.2s;border:none;cursor:pointer;font-size:1rem}
-.btn:hover{background:#0096c7}
+:focus-visible{outline:3px solid rgba(0,180,216,.55);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--navy);color:#cfe6f0;font-size:.83rem;position:relative;z-index:60}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:7px;padding-bottom:7px}
+.topbar a{color:#eaf6fb;font-weight:600}
+.topbar a:hover{color:var(--cyan2)}
+.topbar .tb-l,.topbar .tb-r{display:flex;align-items:center;gap:20px}
+@media(max-width:640px){.topbar .tb-hide{display:none}}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #e3eef4;transition:box-shadow .25s}
+header.scrolled{box-shadow:0 12px 32px rgba(6,38,59,.14)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0;color:var(--ink)}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:.3px;color:var(--navy);display:flex;align-items:center;gap:10px}
+.logo img{height:42px}
+.logo b{color:var(--cyan);font-weight:800}
+.nav nav{display:none;gap:24px;font-size:.95rem;font-weight:600}
+.nav nav a{color:var(--navy2);opacity:.88}
+.nav nav a:hover{opacity:1;color:var(--cyan)}
+@media(min-width:900px){.nav nav{display:flex}}
+.hdcta{display:flex;align-items:center;gap:10px}
+.btn{display:inline-block;background:var(--cyan);color:#fff;font-weight:700;padding:12px 24px;border-radius:12px;transition:.2s;border:2px solid var(--cyan);cursor:pointer;font-size:1rem;line-height:1.25;text-align:center}
+.btn:hover{background:#0096c7;border-color:#0096c7;transform:translateY(-1px)}
 .btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
-.btn.wa{background:#25d366}
-.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,#0d5a7d 100%);color:#fff;padding:76px 0 64px;position:relative;overflow:hidden}
-.hero h1{font-size:2.1rem;line-height:1.4;max-width:720px;font-weight:800}
+.btn.ghost:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.btn.wa{background:#25d366;border-color:#25d366}
+.btn.wa:hover{background:#1eb856;border-color:#1eb856}
+.btn.outline{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+.btn.outline:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn.sm{padding:9px 16px;font-size:.92rem}
+@media(max-width:600px){.hdcta .btn.outline{display:none}}
+.burger{display:none;background:none;border:none;cursor:pointer;padding:8px;color:var(--navy);line-height:0}
+@media(max-width:899px){.burger{display:block}}
+.mpanel{display:none;border-top:1px solid #e3eef4;background:#fff;padding:8px 0 12px}
+.mpanel.open{display:block}
+.mpanel a{display:block;padding:11px 20px;font-weight:600;color:var(--navy2)}
+.mpanel a:hover{background:var(--light);color:var(--cyan)}
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,#0d5a7d 100%);color:#fff;padding:84px 0 72px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.4rem);line-height:1.22;max-width:780px;font-weight:800;letter-spacing:-.01em}
 .hero h1 em{font-style:normal;color:var(--cyan2)}
-.hero p.sub{margin:18px 0 28px;font-size:1.12rem;opacity:.92;max-width:640px}
+.hero p.sub{margin:16px 0 26px;font-size:1.11rem;opacity:.92;max-width:660px}
 .hero .cta{display:flex;gap:14px;flex-wrap:wrap}
-.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:44px}
-@media(min-width:820px){.trust{grid-template-columns:repeat(4,1fr)}}
-.trust div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:16px}
-.trust b{display:block;font-size:1.02rem;color:var(--cyan2)}
-.trust span{font-size:.88rem;opacity:.85}
-section{padding:64px 0}
-section.alt{background:var(--light)}
-h2{font-size:1.7rem;color:var(--navy);margin-bottom:8px}
-.lead{color:var(--muted);max-width:700px;margin-bottom:34px}
+.kicker{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#eaf6fb;font-weight:700;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:22px}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--cyan2);flex:none}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.chip{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:999px;padding:8px 16px;font-size:.9rem;font-weight:600;color:#fff}
+.chip b{color:var(--cyan2);font-weight:800}
+section{padding:84px 0}
+section.alt{background:var(--alt)}
+.eyebrow{display:block;font-size:.8rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+h2{font-size:clamp(1.7rem,3.4vw,2.2rem);color:var(--navy);margin-bottom:10px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
+.lead{color:var(--muted);max-width:720px;margin-bottom:36px;font-size:1.03rem}
+.prose{max-width:820px;color:var(--ink)}
+.prose p{margin-bottom:16px}
+.prose ul{margin:0 0 16px 20px}
+.prose li{margin-bottom:8px}
 .grid{display:grid;gap:18px;grid-template-columns:1fr}
 @media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1000px){.grid.c3{grid-template-columns:repeat(3,1fr)}}
-.card{background:#fff;border:1px solid #e1eef4;border-radius:var(--radius);padding:24px;box-shadow:0 4px 18px rgba(6,38,59,.05)}
+.card{background:#fff;border:1px solid #e1eef4;border-radius:var(--radius);padding:26px;box-shadow:0 4px 18px rgba(6,38,59,.05);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
 .card .ic{font-size:1.9rem;margin-bottom:10px}
 .card h3{color:var(--navy);margin-bottom:6px;font-size:1.08rem}
+.card h3 a:hover{color:var(--cyan)}
 .card p{color:var(--muted);font-size:.95rem}
 .card ul{margin:10px 18px 0 0;color:var(--muted);font-size:.93rem}
+.statsband{background:#fff;padding:46px 0;border-bottom:1px solid #e8f1f6}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 18px;text-align:center}
+@media(min-width:820px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat .snum{font-family:'Manrope',sans-serif;font-size:2.6rem;font-weight:800;color:var(--navy);line-height:1.05}
+.stat .snum .suf{color:var(--cyan)}
+.stat .slab{color:var(--muted);font-size:.93rem;margin-top:7px;font-weight:500}
+.sectors{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);color:#fff}
+.sectors h2{color:#fff}
+.sectors .lead{color:#b9d9e6}
+.sectors .eyebrow{color:var(--cyan2)}
+.tiles{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:var(--radius);padding:26px;transition:transform .25s,background .25s}
+.tile:hover{transform:translateY(-4px);background:rgba(255,255,255,.09)}
+.tile .tic{width:46px;height:46px;border-radius:12px;background:rgba(72,202,228,.16);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.tile .tic svg{width:26px;height:26px;stroke:var(--cyan2);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tile h3{color:#fff;margin-bottom:6px;font-size:1.08rem}
+.tile p{color:#b9d9e6;font-size:.95rem}
 .steps{display:grid;gap:16px;grid-template-columns:1fr}
-@media(min-width:820px){.steps{grid-template-columns:repeat(5,1fr)}}
+@media(min-width:820px){.steps{grid-template-columns:repeat(5,1fr)}
+.steps.timeline{position:relative}
+.steps.timeline:before{content:"";position:absolute;top:22px;left:11%;right:11%;height:2px;background:linear-gradient(90deg,var(--cyan2),var(--cyan));opacity:.55}}
 .step{text-align:center;padding:20px 10px}
-.step b{display:inline-flex;width:44px;height:44px;border-radius:50%;background:var(--cyan);color:#fff;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:10px}
+.step b{display:inline-flex;width:44px;height:44px;border-radius:50%;background:var(--cyan);color:#fff;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:10px;position:relative;z-index:1;box-shadow:0 0 0 6px #fff;font-family:'Manrope',sans-serif}
 .step h4{color:var(--navy);font-size:.98rem;margin-bottom:4px}
 .step p{color:var(--muted);font-size:.86rem}
-.price{background:var(--navy);color:#fff;border-radius:var(--radius);padding:28px}
+.price{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--sh)}
 .price h3{color:var(--cyan2)}
 .price p{opacity:.9;font-size:.95rem}
+.price ul{margin:12px 0 0 18px;font-size:.95rem;opacity:.95}
+.price li{margin-bottom:6px}
+.ctaband{background:linear-gradient(120deg,var(--navy) 0%,var(--navy2) 55%,#0a7ea8 100%);color:#fff;border-radius:22px;padding:36px 32px;text-align:center;box-shadow:var(--sh-lg)}
+.ctaband h2{color:#fff}
+.ctaband p{opacity:.92;margin-bottom:22px}
+.ctafinal{background:linear-gradient(120deg,var(--navy) 0%,var(--navy2) 55%,#0a7ea8 100%);color:#fff;border-radius:22px;padding:46px 36px;text-align:center;box-shadow:var(--sh-lg)}
+.ctafinal h2{color:#fff}
+.ctafinal p{opacity:.92;max-width:620px;margin:0 auto 26px}
+.ctafinal .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.faqlist{max-width:880px;display:grid;gap:12px}
+details.faq{background:#fff;border:1px solid #e1eef4;border-radius:14px;padding:20px 24px;box-shadow:0 4px 18px rgba(6,38,59,.04)}
+details.faq summary{font-family:'Manrope',sans-serif;font-weight:700;color:var(--navy);font-size:1.05rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary:after{content:"+";font-size:1.5rem;color:var(--cyan);font-weight:800;line-height:1;flex:none}
+details.faq[open] summary:after{content:"3"}
+details.faq p{color:var(--muted);margin-top:10px;font-size:.96rem}
 form{background:#fff;border:1px solid #e1eef4;border-radius:var(--radius);padding:28px;box-shadow:0 8px 30px rgba(6,38,59,.08)}
 label{display:block;font-weight:600;font-size:.92rem;margin:14px 0 6px;color:var(--navy)}
 input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid #cfe3ec;border-radius:10px;font-size:1rem;font-family:inherit;background:#fbfdfe}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan)}
 form .btn{width:100%;margin-top:20px;text-align:center}
 .note{font-size:.85rem;color:var(--muted);margin-top:12px;text-align:center}
-footer{background:var(--navy);color:#cfe6f0;padding:36px 0;text-align:center;font-size:.92rem}
+footer{background:var(--navy);color:#cfe6f0;padding:64px 0 0;font-size:.94rem}
 footer b{color:#fff}
+.fgrid{display:grid;gap:36px;grid-template-columns:1fr}
+@media(min-width:820px){.fgrid{grid-template-columns:1.35fr 1fr 1fr 1.1fr}}
+.flogo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:1.22rem;margin-bottom:14px}
+.flogo img{height:40px}
+.flogo b{color:var(--cyan2)}
+.fcol h4{color:#fff;font-size:1rem;margin-bottom:14px}
+.fcol a{display:block;padding:4px 0;color:#cfe6f0;opacity:.92}
+.fcol a:hover{color:var(--cyan2);opacity:1}
+.fcol p{margin-bottom:10px;opacity:.94}
+.fcol a.inline{display:inline;color:#48cae4;font-weight:700;opacity:1}
+.fbottom{border-top:1px solid rgba(255,255,255,.14);margin-top:46px;padding:19px 0;text-align:center;font-size:.87rem;opacity:.88}
 .wafloat{position:fixed;bottom:18px;left:18px;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:60}
+.totop{position:fixed;bottom:18px;right:18px;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;font-size:1.15rem;line-height:1;box-shadow:0 8px 22px rgba(6,38,59,.3);opacity:0;pointer-events:none;transition:.25s;z-index:55;display:flex;align-items:center;justify-content:center}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{background:var(--cyan)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}}
+.trust{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:44px}
+@media(min-width:820px){.trust{grid-template-columns:repeat(4,1fr)}}
+.trust div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:16px}
+.trust b{display:block;font-size:1.02rem;color:var(--cyan2)}
+.trust span{font-size:.88rem;opacity:.85}
+.ar{direction:rtl;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
 .ltr{direction:ltr;unicode-bidi:embed}
 </style>
 <meta property="og:image" content="https://clima-pro-tanger.onrender.com/video/poster.jpg">
@@ -79,18 +174,37 @@ footer b{color:#fff}
 <link rel="canonical" href="https://clima-pro-tanger.onrender.com/ar/">
 </head>
 <body>
+<div class="topbar"><div class="wrap">
+  <div class="tb-l"><a href="tel:+212699963530"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="ltr">+212 699-963530</span></a><a class="tb-hide" href="mailto:awabclimatisation@gmail.com">awabclimatisation@gmail.com</a></div>
+  <div class="tb-r"><span class="tb-hide">الاثنين–السبت <span class="ltr">08:30–19:00</span> · طنجة</span><a href="https://instagram.com/ayoubel_jarti" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-inline-end:6px"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.6" fill="currentColor"/></svg>إنستغرام</a><a href="../index.html" hreflang="fr">Français</a></div>
+</div></div>
 <header><div class="wrap nav">
-  <div class="logo">AWAB CLIM <span>أواب كليم</span></div>
-  <nav><a href="#services">خدماتنا</a><a href="#secteurs">القطاعات</a><a href="#maintenance">الصيانة</a><a href="#galerie">أعمالنا</a><a href="#faq">أسئلة شائعة</a><a href="#devis">عرض سعر مجاني</a><a href="../index.html" hreflang="fr">Français</a></nav>
-  <a class="btn" href="#devis">عرض سعر مجاني</a>
-</div></header>
+  <div class="logo"><img src="../logo-icon.svg" alt="AWAB CLIM"><span>AWAB <b>CLIM</b></span></div>
+  <nav><a href="#services">خدماتنا</a><a href="#secteurs">القطاعات</a><a href="#maintenance">الصيانة</a><a href="#galerie">أعمالنا</a><a href="#faq">أسئلة شائعة</a><a href="#devis">عرض سعر مجاني</a></nav>
+  <div class="hdcta">
+    <a class="btn outline sm" href="tel:+212699963530"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-inline-end:6px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="ltr">+212 699-963530</span></a>
+    <a class="btn sm" href="#devis">عرض سعر مجاني</a>
+    <button class="burger" aria-label="القائمة" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</div>
+<div class="mpanel" id="mpanel">
+  <a href="#services">خدماتنا</a><a href="#secteurs">القطاعات</a><a href="#maintenance">الصيانة</a><a href="#galerie">أعمالنا</a><a href="#faq">أسئلة شائعة</a><a href="#devis">عرض سعر مجاني</a><a href="../index.html" hreflang="fr">Français</a><a href="tel:+212699963530">الهاتف: <span class="ltr">+212 699-963530</span></a>
+</div>
+</header>
 
 <div class="hero"><video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28" src="../video/hero-calm.mp4"></video><div class="wrap" style="position:relative;z-index:2">
+  <div class="kicker"><i></i>شركة تكييف وتبريد — طنجة</div>
   <h1>شركة تكييف وتبريد في طنجة — <em>تركيب وصيانة</em> التكييف للمشاريع التي لا تتوقف.</h1>
   <p class="sub">فنادق، عيادات، مصانع، مكاتب ومساكن: دراسة، حساب الأحجام، تركيب، وعقود صيانة سنوية، بخبرة 12 سنة في طنجة وجهتها.</p>
   <div class="cta">
     <a class="btn wa" href="#devis">اطلب عرض سعر مجاني</a>
     <a class="btn ghost" href="https://wa.me/212699963530?text=مرحباً، أريد طلب عرض سعر للتكييف." target="_blank" rel="noopener">واتساب مباشر</a>
+  </div>
+  <div class="chips">
+    <span class="chip">خبرة <b>12 سنة</b></span>
+    <span class="chip">عرض سعر خلال <b>48 ساعة</b></span>
+    <span class="chip">زيارة تقنية <b>مجانية</b></span>
+    <span class="chip">تدخل <b>6 أيام في الأسبوع</b></span>
   </div>
   <div class="trust">
     <div><b>زيارة تقنية مجانية</b><span>التنقل والتشخيص مجاناً في طنجة</span></div>
@@ -103,7 +217,17 @@ footer b{color:#fff}
   </div>
 </div></div>
 
+
+<section class="statsband"><div class="wrap">
+  <div class="stats">
+    <div class="stat"><div class="snum"><span class="cnt" data-to="12">12</span><span class="suf"> سنة</span></div><div class="slab">خبرة في التكييف والتبريد</div></div>
+    <div class="stat"><div class="snum"><span class="cnt" data-to="48">48</span><span class="suf"> ساعة</span></div><div class="slab">لاستلام عرض السعر المفصّل</div></div>
+    <div class="stat"><div class="snum"><span class="cnt" data-to="6">6</span><span class="suf"> أيام / أسبوع</span></div><div class="slab">للإصلاح والتدخلات</div></div>
+    <div class="stat"><div class="snum"><span class="cnt" data-to="4">4</span></div><div class="slab">مدن نخدمها: طنجة، اكزناية، أصيلة، تطوان</div></div>
+  </div>
+</div></section>
 <section id="services"><div class="wrap">
+  <span class="eyebrow">خبراتنا</span>
   <h2>خدماتنا</h2>
   <p class="lead">من تكييف سبليت لسكن واحد إلى النظام المركزي لفندق كامل: فريق واحد للدراسة والتركيب والمتابعة.</p>
   <div class="grid c3">
@@ -117,6 +241,7 @@ footer b{color:#fff}
 </div></section>
 
 <section id="hub-services"><div class="wrap">
+  <span class="eyebrow">خدمات مفصّلة</span>
   <h2>خدمات التكييف لدينا في طنجة</h2>
   <p class="lead">فيما يلي صفحات مفصّلة لكل خدمة (بالفرنسية): التركيب، التصليح، شحن الغاز، التكييف المخفي، أنظمة VRV/VRF وعقود الصيانة — مع طريقتنا في العمل وآجالنا. وللطلب مباشرة بالعربية، راسلنا على واتساب.</p>
   <div class="grid c3">
@@ -129,27 +254,29 @@ footer b{color:#fff}
   </div>
 </div></section>
 
-<section class="alt" id="secteurs"><div class="wrap">
+<section class="sectors" id="secteurs"><div class="wrap">
+  <span class="eyebrow">قطاعات النشاط</span>
   <h2>القطاعات التي نخدمها</h2>
   <p class="lead">نعمل أولاً مع المهنيين والمشاريع الكبيرة في جهة طنجة.</p>
-  <div class="grid c3">
-    <div class="card"><h3>🏨 الفنادق والإقامات السياحية</h3><p>غرف، أجنحة، مطاعم ومنتجعات: راحة هادئة وتوفر دائم في الموسم.</p></div>
-    <div class="card"><h3>🏥 العيادات والصحة</h3><p>قاعات العمليات والغرف: ترشيح، تجديد الهواء وصيانة وقائية مخططة.</p></div>
-    <div class="card"><h3>🏭 المصانع والمناطق الحرة</h3><p>المنطقة الحرة، طنجة أوطوموتيف سيتي، طنجة تك: ورشات، مكاتب وفضاءات تقنية.</p></div>
-    <div class="card"><h3>🏬 المكاتب والمحلات</h3><p>فضاءات مفتوحة، وكالات، صالات عرض ومراكز تجارية.</p></div>
-    <div class="card"><h3>🏡 الفيلات والمساكن الجديدة</h3><p>تكييف مخفي وVRV سكني للمطورين والخواص الباحثين عن الجودة.</p></div>
-    <div class="card"><h3>🍽️ المطاعم وقاعات الرياضة والمدارس</h3><p>استخراج المطابخ، تهوية وتكييف القاعات ذات الإشغال العالي.</p></div>
+  <div class="tiles">
+    <div class="tile"><div class="tic"><svg viewBox="0 0 24 24"><path d="M5 21V4a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v17"/><path d="M15 9h3a1 1 0 0 1 1 1v11"/><path d="M3 21h18"/><path d="M8.5 7h2M8.5 11h2M8.5 15h2"/></svg></div><h3>الفنادق والإقامات السياحية</h3><p>غرف، أجنحة، مطاعم ومنتجعات: راحة هادئة وتوفر دائم في الموسم.</p></div>
+    <div class="tile"><div class="tic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.5v7M8.5 12h7"/></svg></div><h3>العيادات والصحة</h3><p>قاعات العمليات والغرف: ترشيح، تجديد الهواء وصيانة وقائية مخططة.</p></div>
+    <div class="tile"><div class="tic"><svg viewBox="0 0 24 24"><path d="M3 21V11l5.5 3.5V11L14 14.5V7h4.5v14"/><path d="M3 21h18"/><path d="M17 11h.01M17 15h.01"/></svg></div><h3>المصانع والمناطق الحرة</h3><p>المنطقة الحرة، طنجة أوطوموتيف سيتي، طنجة تك: ورشات، مكاتب وفضاءات تقنية.</p></div>
+    <div class="tile"><div class="tic"><svg viewBox="0 0 24 24"><path d="M3.5 11L12 3.5 20.5 11"/><path d="M5.5 9.5V21h13V9.5"/><path d="M10 21v-5.5h4V21"/></svg></div><h3>الفيلات والمساكن الجديدة</h3><p>تكييف مخفي وVRV سكني للمطورين والخواص الباحثين عن الجودة.</p></div>
+    <div class="tile"><div class="tic"><svg viewBox="0 0 24 24"><rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"/><path d="M3 13h18"/></svg></div><h3>المكاتب والمحلات</h3><p>فضاءات مفتوحة، وكالات، صالات عرض ومراكز تجارية.</p></div>
+    <div class="tile"><div class="tic"><svg viewBox="0 0 24 24"><path d="M4 10h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.2a2.8 2.8 0 0 1 0 5.6H17"/><path d="M7.5 6.5c0-1.2 1-1.3 1-2.5M11.5 6.5c0-1.2 1-1.3 1-2.5"/></svg></div><h3>المطاعم وقاعات الرياضة والمدارس</h3><p>استخراج المطابخ، تهوية وتكييف القاعات ذات الإشغال العالي.</p></div>
   </div>
 </div></section>
 
 <section id="maintenance"><div class="wrap">
+  <span class="eyebrow">الصيانة والعقود</span>
   <h2>عقود الصيانة السنوية</h2>
   <p class="lead">توقف التكييف يكلّف أكثر من العقد. نحن نخطط، وأنت تعمل.</p>
   <div class="grid">
     <div class="price"><h3>عقد الصيانة الوقائية</h3><p>زيارات مخططة (مرشحات، تنظيف، فحوصات كهربائية وغاز)، تقرير مكتوب بعد كل زيارة، وأولوية في الإصلاح.</p><p style="margin-top:10px"><b>الثمن: حسب عرض السعر وفق الأجهزة المركبة.</b></p></div>
     <div class="price"><h3>عقد بريميوم</h3><p>كل مزايا الوقائية + مناوبة للطوارئ، نصح مسبق بالقطع اللازمة، وتعقيم كامل لشبكات الهواء مرة في السنة.</p><p style="margin-top:10px"><b>الثمن: حسب عرض السعر وفق الأجهزة المركبة.</b></p></div>
   </div>
-  <div class="steps" style="margin-top:36px">
+  <div class="steps timeline" style="margin-top:36px">
     <div class="step"><b>1</b><h4>زيارة تقنية</h4><p>مجانية، في الموقع بطنجة</p></div>
     <div class="step"><b>2</b><h4>الدراسة</h4><p>حساب الأحجام واختيار النظام</p></div>
     <div class="step"><b>3</b><h4>عرض سعر خلال 48 ساعة</h4><p>مفصّل وبدون التزام</p></div>
@@ -159,6 +286,7 @@ footer b{color:#fff}
 </div></section>
 
 <section id="video" style="background:var(--navy);padding:64px 0"><div class="wrap">
+  <span class="eyebrow">في فيديو</span>
   <h2 style="color:#fff">اكتشف AWAB CLIM في فيديو</h2>
   <p class="lead" style="color:#b9d9e6">مهنتنا وخدماتنا وطريقة عملنا — في أقل من دقيقة (التعليق الصوتي بالفرنسية).</p>
   <video controls preload="metadata" poster="../video/poster.jpg" style="width:100%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.4)">
@@ -167,6 +295,7 @@ footer b{color:#fff}
 </div></section>
 
 <section id="galerie"><div class="wrap">
+  <span class="eyebrow">أعمالنا</span>
   <h2>أنواع التركيبات</h2>
   <p class="lead">صور توضيحية للأنظمة التي نركّبها ونصونها كل أسبوع في طنجة.</p>
   <div class="grid c3">
@@ -179,7 +308,7 @@ footer b{color:#fff}
   </div>
   <div class="grid" style="margin-top:18px">
     <div class="card"><h3>لماذا يختارنا المهنيون؟</h3><ul><li>مخاطب واحد: الدراسة، التركيب، المتابعة</li><li>عرض سعر مفصّل خلال 48 ساعة، وأثمنة معلنة قبل الورش</li><li>أوراش نظيفة وآجال معلنة كتابة</li><li>تقارير صيانة مكتوبة بعد كل زيارة</li></ul></div>
-    <div class="card"><h3>مناطق التدخل</h3><p>طنجة المدينة، اكزناية والمنطقة الحرة، طنجة أوطوموتيف سيتي، طنجة تك، أصيلة وتطوان. وللمشاريع الكبيرة: التدخل في كل شمال المغرب.</p><p style="margin-top:10px"><b>أوقات العمل:</b> الاثنين–السبت 08:30–19:00 · الطوارئ على الاتصال</p></div>
+    <div class="card"><h3>مناطق التدخل</h3><p>طنجة المدينة، اكزناية والمنطقة الحرة، طنجة أوطوموتيف سيتي، طنجة تك، أصيلة وتطوان. وللمشاريع الكبيرة: التدخل في كل شمال المغرب.</p><p style="margin-top:10px"><b>أوقات العمل:</b> الاثنين–السبت <span class="ltr">08:30–19:00</span> · الطوارئ على الاتصال</p></div>
   </div>
 </div></section>
 
@@ -194,19 +323,21 @@ footer b{color:#fff}
 ]}
 </script>
 <section class="alt" id="faq"><div class="wrap">
+  <span class="eyebrow">أسئلة شائعة</span>
   <h2>أسئلة شائعة</h2>
   <p class="lead">إجابات مباشرة، قبل حتى أن تتصل بنا.</p>
-  <div class="grid">
-    <div class="card"><h3>هل الزيارة وعرض السعر مجانيان فعلاً؟</h3><p>نعم، في طنجة: التنقل والتشخيص وعرض سعر مفصّل خلال 48 ساعة، وبدون أي التزام.</p></div>
-    <div class="card"><h3>ما هي العلامات التي تركّبونها؟</h3><p>جميع العلامات الكبرى المتوفرة في المغرب. ننصحك وفق الميزانية وتوفر قطع الغيار.</p></div>
-    <div class="card"><h3>ماذا يشمل عقد الصيانة؟</h3><p>زيارات مخططة: تنظيف المرشحات والوحدات، تعقيم، فحوصات كهربائية وغاز، تقرير مكتوب، وأولوية عند العطل.</p></div>
-    <div class="card"><h3>هل تعملون مع مكاتب الدراسات وشركات البناء؟</h3><p>نعم: نجيب على الاستشارات وفق دفتر التحملات لدفعة التكييف والتهوية، ونسلم ملفات التنفيذ والمخططات النهائية.</p></div>
-    <div class="card"><h3>ما هي آجال التركيب؟</h3><p>السبليت: غالباً خلال 48 إلى 72 ساعة بعد الاتفاق. مشروع مخفي أو VRV: جدول مكتوب قبل البدء، حسب المساحة والمخزون.</p></div>
-    <div class="card"><h3>هل تقدمون ضماناً؟</h3><p>ضمان الشركة المصنعة على المعدات وضمان على تركيبنا؛ الشروط الدقيقة مكتوبة في عرض السعر، قبل التوقيع.</p></div>
+  <div class="faqlist">
+    <details class="faq"><summary>هل الزيارة وعرض السعر مجانيان فعلاً؟</summary><p>نعم، في طنجة: التنقل والتشخيص وعرض سعر مفصّل خلال 48 ساعة، وبدون أي التزام.</p></details>
+    <details class="faq"><summary>ما هي العلامات التي تركّبونها؟</summary><p>جميع العلامات الكبرى المتوفرة في المغرب. ننصحك وفق الميزانية وتوفر قطع الغيار.</p></details>
+    <details class="faq"><summary>ماذا يشمل عقد الصيانة؟</summary><p>زيارات مخططة: تنظيف المرشحات والوحدات، تعقيم، فحوصات كهربائية وغاز، تقرير مكتوب، وأولوية عند العطل.</p></details>
+    <details class="faq"><summary>هل تعملون مع مكاتب الدراسات وشركات البناء؟</summary><p>نعم: نجيب على الاستشارات وفق دفتر التحملات لدفعة التكييف والتهوية، ونسلم ملفات التنفيذ والمخططات النهائية.</p></details>
+    <details class="faq"><summary>ما هي آجال التركيب؟</summary><p>السبليت: غالباً خلال 48 إلى 72 ساعة بعد الاتفاق. مشروع مخفي أو VRV: جدول مكتوب قبل البدء، حسب المساحة والمخزون.</p></details>
+    <details class="faq"><summary>هل تقدمون ضماناً؟</summary><p>ضمان الشركة المصنعة على المعدات وضمان على تركيبنا؛ الشروط الدقيقة مكتوبة في عرض السعر، قبل التوقيع.</p></details>
   </div>
 </div></section>
 
 <section id="devis"><div class="wrap">
+  <span class="eyebrow">طلب عرض سعر</span>
   <h2>اطلب عرض السعر المجاني</h2>
   <p class="lead">املأ الاستمارة: طلبك يصل مباشرة إلى واتسابنا، والرد في نفس اليوم.</p>
   <form id="leadForm">
@@ -222,15 +353,76 @@ footer b{color:#fff}
   </form>
 </div></section>
 
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="ctafinal">
+    <h2>مشروع تكييف؟ لنتحدث عنه.</h2>
+    <p>زيارة تقنية مجانية في طنجة، عرض سعر مفصّل خلال 48 ساعة، ومخاطب واحد من الدراسة إلى المتابعة.</p>
+    <div class="row">
+      <a class="btn ghost" href="tel:+212699963530">اتصل: <span class="ltr">+212 699-963530</span></a>
+      <a class="btn wa" href="https://wa.me/212699963530?text=مرحباً، أريد طلب عرض سعر للتكييف." target="_blank" rel="noopener">واتساب مباشر</a>
+    </div>
+  </div>
+</div></section>
+
 <footer><div class="wrap">
-  <p><b>AWAB CLIM</b> — أواب كليم للتكييف، طنجة والجهة · خبرة 12 سنة</p>
-  <p>واتساب / هاتف: <a class="ltr" href="https://wa.me/212699963530" style="color:#48cae4">+212 699-963530</a> · الاثنين–السبت 08:30–19:00</p>
-  <p>البريد: <a href="mailto:awabclimatisation@gmail.com" style="color:#48cae4">awabclimatisation@gmail.com</a></p>
-  <p>إنستغرام: <a href="https://instagram.com/ayoubel_jarti" target="_blank" rel="noopener" style="color:#48cae4">@ayoubel_jarti</a></p>
-  <p style="margin-top:8px;opacity:.7">تركيب · مخفي · VRV/VRF · تهوية · صيانة</p>
-  <p style="margin-top:8px"><a href="../index.html" hreflang="fr" style="color:#48cae4">Français</a></p>
+  <div class="fgrid">
+    <div class="fcol">
+      <div class="flogo"><img src="../logo-icon.svg" alt="AWAB CLIM">AWAB <b>CLIM</b></div>
+      <p>شركة تكييف وتبريد في طنجة — تركيب وصيانة للفنادق والعيادات والمصانع والمساكن. خبرة 12 سنة.</p>
+      <p><a class="inline" href="https://instagram.com/ayoubel_jarti" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-inline-end:6px"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.6" fill="currentColor"/></svg>إنستغرام: @ayoubel_jarti</a></p>
+    </div>
+    <div class="fcol">
+      <h4>خدماتنا</h4>
+      <a href="../installation-climatisation-tanger.html">تركيب التكييف</a>
+      <a href="../depannage-climatisation-tanger.html">تصليح التكييف</a>
+      <a href="../recharge-gaz-climatisation-tanger.html">شحن الغاز</a>
+      <a href="../climatisation-gainable-tanger.html">التكييف المخفي (Gainable)</a>
+      <a href="../vrv-vrf-tanger.html">أنظمة VRV/VRF</a>
+      <a href="../contrat-maintenance-climatisation-tanger.html">عقود الصيانة</a>
+      <a href="../prix-installation-climatisation-tanger.html">ثمن التركيب</a>
+    </div>
+    <div class="fcol">
+      <h4>مناطق التدخل وأوقات العمل</h4>
+      <p>طنجة · اكزناية<br>أصيلة · تطوان</p>
+      <p>الاثنين–السبت: <span class="ltr">08:30–19:00</span></p>
+    </div>
+    <div class="fcol">
+      <h4>اتصل بنا</h4>
+      <p>واتساب / هاتف:<br><a class="inline ltr" href="https://wa.me/212699963530">+212 699-963530</a></p>
+      <p>البريد:<br><a class="inline" href="mailto:awabclimatisation@gmail.com">awabclimatisation@gmail.com</a></p>
+      <a class="btn wa sm" href="#devis" style="margin-top:6px">عرض سعر مجاني</a>
+    </div>
+  </div>
+  <div class="fbottom">© 2026 AWAB CLIM — طنجة · راحتكم، أولويتنا !</div>
 </div></footer>
 
+<button class="totop" id="toTop" aria-label="العودة إلى الأعلى">\u2191</button>
+<script>
+(function(){
+  var hdr=document.querySelector('header'),toTop=document.getElementById('toTop');
+  function onScroll(){var y=window.scrollY||document.documentElement.scrollTop||0;if(hdr)hdr.classList.toggle('scrolled',y>10);if(toTop)toTop.classList.toggle('show',y>600);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  if(toTop)toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  var burger=document.querySelector('.burger'),panel=document.getElementById('mpanel');
+  if(burger&&panel){burger.addEventListener('click',function(){var o=panel.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});
+    panel.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){panel.classList.remove('open');burger.setAttribute('aria-expanded','false');});});}
+  if(!('IntersectionObserver' in window))return;
+  var els=document.querySelectorAll('section .card,section h2,.step,.stat,.tile,.price,details.faq,.ctafinal,.ctaband');
+  els.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=((i%3)*70)+'ms';});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  els.forEach(function(el){io.observe(el);});
+  var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;cio.unobserve(e.target);
+    var el=e.target,to=parseFloat(el.getAttribute('data-to'))||0,cur=parseFloat(el.textContent);
+    if(!isNaN(cur)&&cur>0)to=cur;
+    var t0=Date.now(),done=false;
+    function fin(){if(done)return;done=true;el.textContent=to;}
+    function stepf(){if(done)return;var p=Math.min((Date.now()-t0)/1300,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(stepf);else fin();}
+    requestAnimationFrame(stepf);setTimeout(fin,2000);});},{threshold:.4});
+  document.querySelectorAll('.cnt').forEach(function(el){cio.observe(el);});
+  setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight+200&&r.bottom>-200)el.classList.add('in');});},2600);
+})();
+</script>
 <a class="wafloat" href="https://wa.me/212699963530?text=مرحباً، أريد طلب عرض سعر للتكييف." target="_blank" rel="noopener" aria-label="واتساب">💬</a>
 <script>
 document.getElementById('leadForm').addEventListener('submit',function(e){
