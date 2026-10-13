@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /contacts-projets.html
+Sitemap: https://clima-pro-tanger.onrender.com/sitemap.xml
